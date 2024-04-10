@@ -1,0 +1,6 @@
+in chatcontroller .js
+in 81 i have writen isChat instead of results
+
+i was giving wrong json to stringfy
+ groupAdmin: { type: mongoose.Schema.Types.ObjectId, ref: "User" },  
+ in post man    for creategroup chat in chatController
