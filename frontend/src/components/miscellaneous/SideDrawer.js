@@ -26,8 +26,8 @@ import { useToast } from "@chakra-ui/toast";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal1";
-// import NotificationBadge from "react-notification-badge";
-// import { Effect } from "react-notification-badge";
+import NotificationBadge from "react-notification-badge";
+import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../UserAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
@@ -125,7 +125,7 @@ function SideDrawer() {
   return (
     <>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="space-between"
         alignItems="center"
         bg="white"
@@ -141,13 +141,17 @@ function SideDrawer() {
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
+        <Text display="flex" flexDir="row" gap="10px" fontSize="2xl" fontFamily="Work sans">
+          <img src="https://static-00.iconduck.com/assets.00/chat-icon-1024x1024-o88plv3x.png" alt="img1"  width="40px"/>
           Talk-A-Tive
         </Text>
         <div>
           <Menu>
             <MenuButton p={1}>
-          
+            <NotificationBadge
+                count={notification.length}
+                effect={Effect.SCALE}
+              />
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
 

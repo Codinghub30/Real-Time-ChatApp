@@ -1,3 +1,6 @@
+import img1 from "../components/pictures/live-chat.png";
+import bg from "../components/pictures/bg.png";
+
 import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
@@ -15,6 +18,7 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
+import { px } from "framer-motion";
 const ENDPOINT = "http://localhost:7000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
@@ -168,7 +172,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             px={2}
             w="100%"
             fontFamily="Work sans"
-            d="flex"
+            display="flex"
             justifyContent={{ base: "space-between" }}
             alignItems="center"
           >
@@ -197,15 +201,18 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               ))}
           </Text>
           <Box
-            d="flex"
+            display="flex"
             flexDir="column"
             justifyContent="flex-end"
             p={3}
-            bg="#E8E8E8"
+            bgImg={bg}
             w="100%"
-            h="100%"
+            h="90%"
             borderRadius="lg"
-            overflowY="hidden"
+            // Scroll............
+            overflowX="auto"
+            maxW="100vw"
+            whiteSpace="nowrap"
           >
             {loading ? (
               <Spinner
@@ -251,7 +258,16 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         </>
       ) : (
         // to get socket.io on same page
-        <Box d="flex" alignItems="center" justifyContent="center" h="100%">
+        <Box
+          display="flex"
+          flexDir="column"
+          alignItems="center"
+          justifyContent="center"
+          h="100%"
+        >
+          <div>
+            <img src={img1} alt="img1" width="180px" height="350px" />
+          </div>
           <Text fontSize="3xl" pb={3} fontFamily="Work sans">
             Click on a user to start chatting
           </Text>
