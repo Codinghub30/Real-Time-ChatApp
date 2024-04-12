@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/spinner": "^2.1.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "bcrypt": "^5.1.1",
-    "framer-motion": "^11.0.24"
+    "framer-motion": "^11.0.24",
+    "react-scrollable-feed": "^2.0.1",
+    "socket.io": "^4.7.5"
   }
 }
